@@ -6,7 +6,7 @@
           <div class="card-description">
             <h2><%= superhero.name %></h2>
           </div>
-          <%# <%= link_to "Show Super", supers_path[supers/:id], class: 'card-link' %> %>
+          <%= link_to "Show Super", super_path(superhero.id), class: 'card-link' %>
         </div>
       </div>
     <% end %>

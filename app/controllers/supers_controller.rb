@@ -1,5 +1,5 @@
 class SupersController < ApplicationController
-  before_action :set_super, only: [:show, :destroy]
+  before_action :set_super, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:new, :create]
 
   def index
@@ -12,13 +12,24 @@ class SupersController < ApplicationController
       else
         @supers = Super.all
       end
-    end
+  end
 
   def show
   end
 
   def new
     @super = Super.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @super.update(super_params)
+      redirect_to @super, notice: 'Superhero was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def create
