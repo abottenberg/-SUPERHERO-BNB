@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  @user == current.user
-  @super == current.superhero
+  before_action :set_user, only: [:destroy]
+  before_action :set_super, only: [:new, :create]
 
   def new
     @bookings = Booking.new
@@ -8,6 +8,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = @user
+    @booking.super = @super
     if @booking.save
       redirect_to booking_path(@booking)
      else
@@ -22,6 +24,14 @@ class BookingsController < ApplicationController
   end
 
   private
+  
+  def set_user
+    @user = current_user
+  end
+
+  def set_super
+    @super = Super.find(params[:id])
+  end
 
   def booking_params
     params.require(:booking).permit(:user, :super)
