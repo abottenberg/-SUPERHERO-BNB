@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+  @user == current.user
+  @super == current.superhero
+
   def new
     @bookings = Booking.new
   end
@@ -10,6 +13,12 @@ class BookingsController < ApplicationController
      else
       render :new
     end
+  end
+
+  def destroy
+    @booking = booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
