@@ -1,0 +1,8 @@
+<div class="row justify-content-center">
+  <row class="col-lg-4">
+    <p>Confirm your booking</p>
+    <%= simple_form_for [@super, @booking] do |f| %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </row>
+</div>

@@ -8,6 +8,10 @@
       <p>Villain</p>
     <% end %>
 
-<%= link_to 'Edit', edit_super_path(@super) %> |
+<% if @super.user == current_user %>
+  <%= link_to 'Edit', edit_super_path(@super) %> |
+  <%= link_to 'Delete', super_path(@super), method: :delete, data: {confirm: "Are you sure?"} %> |
+<% end %>
+<%= link_to 'Book', new_super_booking_path(@super) %> |
 <%= link_to 'Back', supers_path %> |
 </div>
