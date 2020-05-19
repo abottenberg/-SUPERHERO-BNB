@@ -1,0 +1,2 @@
+class SupersController < ApplicationController
+end
