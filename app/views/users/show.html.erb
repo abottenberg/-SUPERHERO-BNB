@@ -9,9 +9,10 @@
       <div class="col-12 col-md-6 col-lg-3">
         <div class="card">
           <div class="card-description">
-            <h2><%= booking.superhero %></h2>
+            <h2><%= booking.super.name %></h2>
           </div>
-          <%= link_to "Show Super", super_path(superhero.id), class: 'card-link' %>
+          <%= link_to "Show Super", super_path(booking.super_id), class: 'card-link' %>
+          <%= link_to 'Delete', super_booking_path(booking.super, booking), method: :delete, data: {confirm: "Are you sure?"} %>
         </div>
       </div>
     <% end %>

@@ -34,8 +34,8 @@ class SupersController < ApplicationController
 
   def create
     @super = Super.new(super_params)
-    @super.user = @user
-    if @user.save
+    @super.user = current_user
+    if @super.save
       redirect_to super_path(@super)
     else
       render :new
@@ -44,7 +44,7 @@ class SupersController < ApplicationController
 
   def destroy
     @super.destroy
-    redirect_to #
+    redirect_to supers_path
   end
 
   private
