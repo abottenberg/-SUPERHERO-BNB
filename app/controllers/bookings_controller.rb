@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_user, only: [:destroy]
+  before_action :set_user, only: [:destroy, :create]
   before_action :set_super, only: [:new, :create]
 
   def new
@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @booking.super = @super
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to #(@booking)
      else
       render :new
     end
@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to #
   end
 
   private
