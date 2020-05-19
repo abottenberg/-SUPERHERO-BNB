@@ -1,10 +1,13 @@
 <div class="container">
   <h1> <%= @super.name %></h1>
 
-    <p><%= @super.location %></p>
-    <% if @super.good == true%>
-        <p>Hero</p>
-      <% else %>
-        <p>Villain</p>
-      <% end %>
+  <p><%= @super.location %></p>
+  <% if @super.good == true%>
+      <p>Hero</p>
+    <% else %>
+      <p>Villain</p>
+    <% end %>
+
+<%= link_to 'Edit', edit_super_path(@super) %> |
+<%= link_to 'Back', supers_path %> |
 </div>
