@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <% @supers.each do |superhero| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card">
+          <div class="card-description">
+            <h2><%= superhero.name %></h2>
+          </div>
+          <%# <%= link_to "Show Super", supers_path[supers/:id], class: 'card-link' %> %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
