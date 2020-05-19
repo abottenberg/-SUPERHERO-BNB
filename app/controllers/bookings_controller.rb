@@ -1,17 +1,16 @@
 class BookingsController < ApplicationController
-  before_action :set_user, only: [:destroy, :create]
+  # before_action :set_user, only: [:destroy, :create]
   before_action :set_super, only: [:new, :create]
 
   def new
-    @bookings = Booking.new
+    @booking = Booking.new
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user = @user
-    @booking.super = @super
+    @booking = Booking.new(super_id: params[:super_id].to_i)
+    @booking.user = current_user
     if @booking.save
-      redirect_to #(@booking)
+      redirect_to user_path(current_user)
      else
       render :new
     end
@@ -24,16 +23,9 @@ class BookingsController < ApplicationController
   end
 
   private
-  
-  def set_user
-    @user = current_user
-  end
 
   def set_super
-    @super = Super.find(params[:id])
+    @super = Super.find(params[:super_id])
   end
 
-  def booking_params
-    params.require(:booking).permit(:user, :super)
-  end
 end
