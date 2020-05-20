@@ -11,3 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
