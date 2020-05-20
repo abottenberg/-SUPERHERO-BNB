@@ -58,6 +58,6 @@ class SupersController < ApplicationController
   end
 
   def super_params
-    params.require(:super).permit(:name, :location, :good, :photos)
+    params.require(:super).permit(:name, :location, :good, :photo)
   end
 end

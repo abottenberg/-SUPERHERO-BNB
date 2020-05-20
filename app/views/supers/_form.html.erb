@@ -4,7 +4,7 @@
       <%= f.input :name %>
       <%= f.input :location %>
       <%= f.input :description %>
-      <%= f.input :photos, as: :file, html: {multiple: true} %>
+      <%= f.input :photo, as: :file %>
       <%= f.collection_radio_buttons :good, [[true, 'Hero'], [false, 'Villain']], :first, :last %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
