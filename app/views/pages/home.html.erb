@@ -1,5 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="superhero-supervillain d-flex">
+  <%= link_to supers_path(superhero: true) do %>
+    <div class="panel hero" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path("superheroes.jpg") %>);">
+      <p class="text top-left">Superheroes!</p>
+    </div>
+  <% end %>
 
-<%= link_to 'hero', supers_path(superhero: true) %>
-<%= link_to 'villain', supers_path(superhero: false) %>
+  <%= link_to supers_path(superhero: false) do %>
+    <div class="panel villain" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path("supervillain.jpg") %>);">
+      <p class="text bottom-right">Supervillains!</p>
+    </div>
+  <% end %>
+</div>
