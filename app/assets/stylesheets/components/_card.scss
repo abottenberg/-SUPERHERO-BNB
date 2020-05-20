@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-super-image {
+  padding: 24px;
+  background-color: white;
+
+  box-shadow: 5px -1px 19px -4px #6b6b6b;
+}
+
+.container-super-card {
+  align-items: left;
+  padding: 24px;
+}
+
+.super-description-box {
+  padding: 16px;
+  background-color: white;
+  box-shadow: 5px -1px 19px -4px #6b6b6b;
+}
+

@@ -1,17 +1,24 @@
 <div class="container">
-  <h1> <%= @super.name %></h1>
+    <div class="container-super-image">
+    <%= cl_image_tag @super.photo.key, width: 400, height: 500, crop: :fill %>
 
-  <p><%= @super.location %></p>
-  <% if @super.good == true%>
-      <p>Hero</p>
-    <% else %>
-      <p>Villain</p>
+    <% if @super.user == current_user %>
+    <%= link_to 'Edit', edit_super_path(@super), class: "btn btn-super-edits"%>
+    <%= link_to 'Delete', super_path(@super), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-super-edits" %>
     <% end %>
+  </div>
+  <div class="container-super-card"></div>
+    <div class="container-super-infos">
+      <h1> <%= @super.name %></h1>
 
-<% if @super.user == current_user %>
-  <%= link_to 'Edit', edit_super_path(@super) %> |
-  <%= link_to 'Delete', super_path(@super), method: :delete, data: {confirm: "Are you sure?"} %> |
-<% end %>
-<%= link_to 'Book', new_super_booking_path(@super) %> |
-<%= link_to 'Back', supers_path %> |
+      <p><%= @super.location %></p>
+      <% if @super.good == true%>
+          <p>Hero</p>
+        <% else %>
+          <p>Villain</p>
+        <% end %>
+        <p class="super-description-box"><%= @super.description %></p>
+        <%= link_to 'Book', new_super_booking_path(@super), class: "btn btn-primary"%>
+        <%= link_to 'Back', supers_path, class: "btn btn-primary"%>
+      </div>
 </div>
