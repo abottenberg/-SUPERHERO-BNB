@@ -1,12 +1,28 @@
-.navbar-lewagon {
+.navbar-super-bnb {
+  text-align: right;
   justify-content: space-between;
-  background: white;
+  background: $super-blue;
+  height: 136px;
+  border-bottom: 8px solid black;
+  position: relative;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-super-bnb .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-super-bnb .navbar-brand img {
   width: 40px;
+}
+
+.dropdown-toggle {
+  width: 72px;
+  position: absolute;
+  right: 30px;
+  top: 31px;
+  border: 6px solid black;
+}
+
+a {
+  color: black;
 }
