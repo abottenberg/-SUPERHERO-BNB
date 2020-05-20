@@ -1,22 +1,23 @@
-
-
-
-<div class="container">
+<div class="profile-container m-2">
   <h1>Your Super Team</h1>
-  <div class="row">
-    <% @user.bookings.each do |booking| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card">
+
+  <div class="container-index">
+    <div class="cards">
+      <% @user.bookings.each do |booking| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.super.photo.key, height: 200, width: 300, crop: :fill %>')">
           <div class="card-description">
-            <h2><%= booking.super.name %></h2>
+            <h2 class="title-box"><%= booking.super.name %></h2>
           </div>
-          <%= link_to "Show Super", super_path(booking.super_id), class: 'card-link' %>
-          <%= link_to 'Delete', super_booking_path(booking.super, booking), method: :delete, data: {confirm: "Are you sure?"} %>
+          <div class="link-box">
+            <%= link_to "Show Super", super_path(booking.super_id), class: 'card-link' %>
+            <%= link_to 'Delete', super_booking_path(booking.super, booking), method: :delete, data: {confirm: "Are you sure?"} %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+
 <span class="m-1">
   <%= link_to 'Back', supers_path %>
 </span>
