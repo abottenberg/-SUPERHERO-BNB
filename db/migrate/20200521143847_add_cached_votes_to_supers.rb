@@ -11,6 +11,6 @@ class AddCachedVotesToSupers < ActiveRecord::Migration[6.0]
     end
 
     # Uncomment this line to force caching of existing votes
-    Super.find_each(&:update_cached_votes)
+    # Super.find_each(&:update_cached_votes)
   end
 end
