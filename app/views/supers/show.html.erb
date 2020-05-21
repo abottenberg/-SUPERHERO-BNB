@@ -1,9 +1,6 @@
 <div class="container">
   <div class="container-super-image">
-  <% if @super.photo.attached? %>
-    <%= cl_image_tag @super.photo.key, width: 400, height: 500, crop: :fill %>
-  <% end %>
-
+  <%= cl_image_tag @super.photo.key, width: 400, height: 500, crop: :fill %>
     <div>
       <% if @super.user == current_user %>
       <%= link_to 'Edit', edit_super_path(@super), class: "btn btn-super-edits" %>
