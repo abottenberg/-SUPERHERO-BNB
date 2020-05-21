@@ -17,18 +17,12 @@
   }
 }
 
-.title-box {
-  background: white;
-  padding: 4px;
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
-  margin-right: 225px;
-  font-size: 24px;
-}
 
 .link-box {
   background: white;
   padding: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
   border-top: 2px solid black;
   border-left: 2px solid black;
   margin-right: 164px;
@@ -37,6 +31,7 @@
   position: absolute;
   right: -159px;
   transform: skew(-15deg);
+  overflow: hidden;
 }
 
 .cards {
