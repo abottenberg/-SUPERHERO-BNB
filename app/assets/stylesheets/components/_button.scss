@@ -15,6 +15,23 @@
   }
 }
 
+.btn-super-nav {
+  border: 4px solid black;
+  font-size: 16px;
+  background-color: white;
+  transform: skew(-10deg);
+  padding: 4px 8px;
+  box-shadow: 8px 8px #3E4442;
+  font-family: $comic-font;
+  margin-right: 16px;
+  z-index: 10;
+  &:hover {
+    box-shadow: 10px 10px #3E4442;
+    padding: 6px 10px;
+    background-color: #D6130A;
+  }
+}
+
 .btn-info {
   position: absolute;
   bottom: -2px;
