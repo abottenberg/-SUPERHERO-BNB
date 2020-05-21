@@ -1,5 +1,5 @@
 class SupersController < ApplicationController
-  before_action :set_super, only: [:show, :edit, :update, :destroy]
+  before_action :set_super, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :set_user, only: [:new, :create]
 
   def index
@@ -44,6 +44,16 @@ class SupersController < ApplicationController
 
   def destroy
     @super.destroy
+    redirect_to supers_path
+  end
+
+  def upvote
+    @super.upvote_from current_user
+    redirect_to supers_path
+  end
+
+  def downvote
+    @super.downvote_from current_user
     redirect_to supers_path
   end
 

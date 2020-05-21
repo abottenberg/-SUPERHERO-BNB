@@ -11,8 +11,7 @@
               <div class="link-box">
                 <%= link_to "Show Super", super_path(superhero.id), class: 'card-link' %>
               </div>
-            </div>
-            <% else %>
+                 <% else %>
                <div class="card-category">
                 <div class="card-description">
                 <h2 class="title-box"><%= superhero.name %></h2>
@@ -22,10 +21,15 @@
               </div>
               </div>
             <% end %>
-
-
-
-      <% end %>
-
+            <%= link_to like_super_path(superhero), class: "like", method: :put do %>
+              <button type="button" class="btn btn-info" aria-label="Left Align">
+                <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+                <span class="badge"><%= superhero.get_upvotes.size %></span>
+                </button>
+            <% end %>
+          <% end %>
+         </div>
+       <% end %>
+     <% end %>
   </div>
 </div>
