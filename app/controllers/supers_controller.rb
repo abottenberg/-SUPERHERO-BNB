@@ -10,7 +10,17 @@ class SupersController < ApplicationController
         @supers = Super.where(good: false).order(:cached_votes_score => :desc)
       end
     else
-      @supers = Super.all.order(:cached_votes_score => :desc)
+      if params[:query].present?
+        sql_query = " \
+          supers.name @@ :query \
+          OR supers.description @@ :query \
+          OR supers.quote @@ :query \
+          OR supers.location @@ :query \
+        "
+        @supers = Super.where(sql_query, query: "%#{params[:query]}%")
+      else
+        @supers = Super.all.order(:cached_votes_score => :desc)
+      end
     end
   end
 
