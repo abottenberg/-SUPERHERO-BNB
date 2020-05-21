@@ -1,5 +1,6 @@
 <div class="row justify-content-center">
-  <row class="col-lg-4">
+  <div class="form_container">
+    <row class="col-lg-8">
     <%= simple_form_for @super do |f| %>
       <%= f.input :name %>
       <%= f.input :location %>
@@ -7,7 +8,9 @@
       <%= f.input :quote %>
       <%= f.input :photo, as: :file %>
       <%= f.collection_radio_buttons :good, [[true, 'Hero'], [false, 'Villain']], :first, :last %>
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "btn-super-confirm" %>
     <% end %>
   </row>
+  </div>
 </div>
+

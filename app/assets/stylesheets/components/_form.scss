@@ -1,10 +1,10 @@
 .form_container {
-  padding-top: 40px;
   text-align: center;
   border: 8px solid black;
-  height: 300px;
-  width: 400px;
   margin-top: 40px;
+  padding: 40px;
+  font-family: $comic-font;
+  font-size: 16px;
   h2 {
     font-family: $super-font;
   }
@@ -16,4 +16,14 @@
 .form-actions{
   font-family: $comic-font;
   font-size: 20px;
+}
+
+.collection_radio_buttons {
+  margin-right: 16px;
+}
+
+.form-group {
+  .text {
+  border: 1px solid #ced4da;
+  }
 }
