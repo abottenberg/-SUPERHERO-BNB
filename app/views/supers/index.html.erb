@@ -16,14 +16,13 @@
 
           <%= link_to like_super_path(superhero), class: "like", method: :put do %>
           <button type="button" class="btn btn-info" aria-label="Left Align">
-            <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
             <span class="badge"><%= superhero.get_upvotes.size %></span>
           </button>
         <% end %>
         </div>
 
       <% else %>
-
         <div class="card-category">
           <div>
             <p class="speech"><%= superhero.quote %></p>
@@ -33,17 +32,8 @@
               <h2><%= superhero.name %></h2>
             <% end %>
           </div>
-
-          <%= link_to like_super_path(superhero), class: "like", method: :put do %>
-          <button type="button" class="btn btn-info" aria-label="Left Align">
-            <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
-            <span class="badge"><%= superhero.get_upvotes.size %></span>
-          </button>
-        <% end %>
         </div>
-
       <% end %>
-
     <% end %>
   </div>
 </div>
