@@ -1,8 +1,10 @@
 <div class="row justify-content-center">
-  <row class="col-lg-4">
-    <p>Confirm your booking</p>
-    <%= simple_form_for [@super, @booking] do |f| %>
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-  </row>
+  <div class="form_container">
+    <row class="col-lg-4">
+      <h2>Add <%= @super.name %> to your team</h2>
+      <%= simple_form_for [@super, @booking] do |f| %>
+        <%= f.button :submit, 'Confirm', class: "btn-super-confirm" %>
+      <% end %>
+    </row>
+  </div>
 </div>
