@@ -5,12 +5,12 @@ class SupersController < ApplicationController
   def index
       if params[:superhero].present?
         if params[:superhero] == "true"
-          @supers = Super.where(good: true)
+          @supers = Super.where(good: true).order(:cached_votes_score => :desc)
         else
-          @supers = Super.where(good: false)
+          @supers = Super.where(good: false).order(:cached_votes_score => :desc)
         end
       else
-        @supers = Super.all.order(:cached_votes_up => :asc)
+        @supers = Super.all.order(:cached_votes_score => :desc)
       end
   end
 
@@ -48,13 +48,14 @@ class SupersController < ApplicationController
   end
 
   def upvote
+    @super = Super.find(params[:id])
     @super.upvote_from current_user
-    redirect_to supers_path
+    redirect_back fallback_location: supers_path
   end
 
   def downvote
     @super.downvote_from current_user
-    redirect_to supers_path
+    redirect_back fallback_location: supers_path
   end
 
   private
