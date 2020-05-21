@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-super-bnb">
 
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler btn-super-nav" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -12,9 +12,7 @@
   </div>
 
   <div>
-    <%= link_to supers_path do %>
-      <h1 class="super-title">Supers!</h1>
-    <% end %>
+    <h1 class="super-title">Supers!</h1>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,7 +29,7 @@
         </div>
       <% else %>
         <div class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "btn-super-nav" %>
         </div>
       <% end %>
 
