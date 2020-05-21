@@ -32,3 +32,11 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+
+const card_category = document.querySelector('.card-category');
+card_category.addEventListener("mouseover", (event) => {
+  const speech = document.querySelector('.speech');
+  console.log(speech)
+  speech.style.display = "inline-block";
+});
