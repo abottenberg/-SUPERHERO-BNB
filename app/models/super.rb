@@ -4,4 +4,5 @@ class Super < ApplicationRecord
   has_one_attached :photo
   validates :name, presence: true, uniqueness: true
   validates :location, :photo, presence: true
+  acts_as_votable
 end

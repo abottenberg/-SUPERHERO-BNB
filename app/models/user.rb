@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :supers
   has_many :bookings
+  acts_as_voter
 end
