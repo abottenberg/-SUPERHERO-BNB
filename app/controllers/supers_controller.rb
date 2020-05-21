@@ -5,9 +5,9 @@ class SupersController < ApplicationController
   def index
     if params[:superhero].present?
       if params[:superhero] == "true"
-        @supers = Super.where(good: true).order(:cached_votes_score => :desc)
+        @supers = Super.where(good: true).order(:cached_votes_up => :desc)
       else
-        @supers = Super.where(good: false).order(:cached_votes_score => :desc)
+        @supers = Super.where(good: false).order(:cached_votes_up => :desc)
       end
     else
       if params[:query].present?
@@ -19,7 +19,7 @@ class SupersController < ApplicationController
         "
         @supers = Super.where(sql_query, query: "%#{params[:query]}%")
       else
-        @supers = Super.all.order(:cached_votes_score => :desc)
+        @supers = Super.all.order(:cached_votes_up => :desc)
       end
     end
   end
