@@ -10,7 +10,7 @@ class SupersController < ApplicationController
           @supers = Super.where(good: false)
         end
       else
-        @supers = Super.all
+        @supers = Super.all.order(:cached_votes_up => :asc)
       end
   end
 
