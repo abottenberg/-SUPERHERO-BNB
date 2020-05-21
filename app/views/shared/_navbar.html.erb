@@ -6,11 +6,16 @@
   </button>
 
   <div class="nav-item d-flex">
-    <%= link_to "Create a new Superhero!", new_super_path, class: "nav-link" %>
-    <%= link_to 'All Heroes', supers_path(superhero: true), class: "nav-link" %>
-    <%= link_to 'All Villains', supers_path(superhero: false), class: "nav-link" %>
+    <%= link_to "New Super!", new_super_path, class: "btn-super-nav" %>
+    <%= link_to 'Heroes', supers_path(superhero: true), class: "btn-super-nav" %>
+    <%= link_to 'Villains', supers_path(superhero: false), class: "btn-super-nav" %>
   </div>
 
+  <div>
+    <%= link_to supers_path do %>
+      <h1 class="super-title">Supers!</h1>
+    <% end %>
+  </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 

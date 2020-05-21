@@ -7,6 +7,16 @@
   position: relative;
 }
 
+.dropdown-menu {
+  border: 4px solid black;
+  font-size: 16px;
+  background-color: white;
+  margin-top: 68px;
+  right: 81px;
+  width: 200px;
+}
+
+
 .navbar-super-bnb .navbar-collapse {
   flex-grow: 0;
 }
@@ -26,4 +36,21 @@
 a {
   color: black;
   font-size: 16px;
+}
+
+.navbar {
+  position: relative;
+}
+
+.super-title {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 16px;
+  text-align: center;
+  font-size: 90px;
+  color: #D6130A;
+  text-shadow: 4px 4px black;
 }
