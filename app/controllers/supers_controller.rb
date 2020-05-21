@@ -3,15 +3,15 @@ class SupersController < ApplicationController
   before_action :set_user, only: [:new, :create]
 
   def index
-      if params[:superhero].present?
-        if params[:superhero] == "true"
-          @supers = Super.where(good: true).order(:cached_votes_score => :desc)
-        else
-          @supers = Super.where(good: false).order(:cached_votes_score => :desc)
-        end
+    if params[:superhero].present?
+      if params[:superhero] == "true"
+        @supers = Super.where(good: true).order(:cached_votes_score => :desc)
       else
-        @supers = Super.all.order(:cached_votes_score => :desc)
+        @supers = Super.where(good: false).order(:cached_votes_score => :desc)
       end
+    else
+      @supers = Super.all.order(:cached_votes_score => :desc)
+    end
   end
 
   def show
@@ -50,6 +50,7 @@ class SupersController < ApplicationController
   def upvote
     @super = Super.find(params[:id])
     @super.upvote_from current_user
+    @super.save
     redirect_back fallback_location: supers_path
   end
 
