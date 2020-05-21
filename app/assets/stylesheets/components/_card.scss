@@ -15,6 +15,11 @@
   h2 {
     font-family: $super-font;
   }
+  &:hover {
+    .speech {
+      display: inline-block;
+    }
+  }
 }
 
 

@@ -49,10 +49,12 @@
   background-color:#fff;
   border:solid 2px #000;
   border-radius:12px;
-  display:inline-block;
+  display: none;
   margin:.5em;
   padding:.5em 1em;
   position:relative;
+  top: 16px;
+  right: -88px;
 }
 
 .speech:before {
