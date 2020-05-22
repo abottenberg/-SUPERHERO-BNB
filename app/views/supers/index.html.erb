@@ -22,10 +22,10 @@
             <% end %>
           </div>
 
-          <%= link_to like_super_path(superhero), class: "like", method: :put do %>
+          <%= link_to like_super_path(superhero), remote: true, class: "like", method: :put do %>
           <button type="button" class="btn btn-info" aria-label="Left Align">
             <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-            <span class="badge"><%= superhero.get_upvotes.size %></span>
+            <span class="badge" id="superhero-<%= superhero.id %>"><%= superhero.get_upvotes.size %></span>
           </button>
         <% end %>
         </div>

@@ -35,6 +35,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'cloudinary'
 gem 'acts_as_votable'
+gem 'turbolinks_render'
 
 group :development, :test do
   gem 'pry-byebug'
