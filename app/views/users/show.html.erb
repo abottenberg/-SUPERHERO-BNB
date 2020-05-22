@@ -2,12 +2,15 @@
 <div class="d-flex mt-4 mr-5 ml-5">
 
   <div class="hero-profile">
-    <div>
+    <!-- <div> -->
       <% @user.bookings.each do |booking| %>
         <% if booking.super.good == true %>
           <div class="d-flex hero-individual mb-4">
-           <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %>
-            </div>
+            <% if booking.super.photo.attached? %>
+              <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
+            <% else %>
+              <div><%= image_tag 'superheroes.jpg', class: "profile-image" %></div>
+            <% end %>
             <div>
               <h2><%= booking.super.name %></h2>
               <p><%= booking.super.description %></p>
@@ -15,7 +18,7 @@
           </div>
         <% end %>
       <% end %>
-    </div>
+    <!-- </div> -->
   </div>
 
 
@@ -25,8 +28,11 @@
       <% @user.bookings.each do |booking| %>
         <% if booking.super.good == false %>
           <div class="d-flex hero-individual mb-4">
-           <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %>
-            </div>
+           <% if booking.super.photo.attached? %>
+              <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
+            <% else %>
+              <div><%= image_tag 'superheroes.jpg', class: "profile-image" %></div>
+            <% end %>
             <div>
               <h2><%= booking.super.name %></h2>
               <p><%= booking.super.description %></p>
