@@ -61,7 +61,8 @@ class SupersController < ApplicationController
     @super = Super.find(params[:id])
     @super.upvote_from current_user
     @super.save
-    redirect_back fallback_location: supers_path
+    # redirect_back fallback_location: supers_path
+    redirect_to supers_path(@super, anchor: "superhero-#{@super.id}")
   end
 
   def downvote
