@@ -9,9 +9,26 @@
   padding: 8px 16px;
   box-shadow: 8px 8px #888888;
   font-family: $comic-font;
+  margin-right: 16px;
   &:hover {
     box-shadow: 10px 10px #888888;
     padding: 10px 18px;
+  }
+}
+
+.btn-super-search {
+  border: 2px solid black;
+  font-size: 16px;
+  background-color: #D6130A;
+  transform: skew(-10deg);
+  padding: 2px 8px;
+  box-shadow: 8px 8px #888888;
+  font-family: $comic-font;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  &:hover {
+    box-shadow: 10px 10px #888888;
+    padding: 3px 9px;
   }
 }
 
