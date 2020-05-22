@@ -2,7 +2,7 @@
   <div class="form_container">
     <row class="col-lg-4">
       <h2>Add <%= @super.name %> to your team</h2>
-      <%= simple_form_for [@super, @booking] do |f| %>
+      <%= simple_form_for [@super, Booking.new] do |f| %>
         <%= f.button :submit, 'Confirm', class: "btn-super-confirm" %>
       <% end %>
     </row>
