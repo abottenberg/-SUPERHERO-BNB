@@ -6,7 +6,11 @@
       <% @user.bookings.each do |booking| %>
         <% if booking.super.good == true %>
           <div class="d-flex hero-individual">
-            <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
+            <% if booking.super.photo.attached? %>
+              <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
+            <% else %>
+              <div><%= image_tag 'superheroes.jpg', class: "profile-image" %></div>
+            <% end %>
             <div>
               <h2><%= booking.super.name %></h2>
               <p class="hero-description"><%= booking.super.description %></p>
@@ -23,7 +27,11 @@
       <% @user.bookings.each do |booking| %>
         <% if booking.super.good == false %>
           <div class="d-flex hero-individual">
-           <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
+           <% if booking.super.photo.attached? %>
+              <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
+            <% else %>
+              <div><%= image_tag 'superheroes.jpg', class: "profile-image" %></div>
+            <% end %>
             <div>
               <h2><%= booking.super.name %></h2>
               <p><%= booking.super.description %></p>
