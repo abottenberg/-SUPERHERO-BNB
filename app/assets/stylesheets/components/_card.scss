@@ -16,6 +16,8 @@
     font-family: $super-font;
   }
   &:hover {
+     box-shadow: 4px 4px #888888;
+     width: 101%;
     .speech {
       display: inline-block;
     }
@@ -26,16 +28,15 @@
 .link-box {
   background: white;
   padding: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
   border-top: 2px solid black;
   border-left: 2px solid black;
   margin-right: 164px;
   font-size: 16px;
-  bottom: 1px;
+  bottom: 0px;
   position: absolute;
-  right: -159px;
-  transform: skew(-15deg);
+  right: -164px;
   overflow: hidden;
 }
 

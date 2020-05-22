@@ -1,10 +1,13 @@
 <div class="container-index">
+  <h1>Build your team!</h1>
+
   <form action="/supers" accept-charset="UTF-8" method="get">
     <div class="d-flex w-25">
-      <input type="text" name="query" id="query" class="form-control" placeholder="Find your Superhero or Villain!">
-      <input type="submit" name="commit" value="Search" class="btn btn-primary" data-disable-with="Search">
+      <input type="text" name="query" id="query" class="form-control-search" placeholder="Find your Superhero or Villain!">
+      <input type="submit" name="commit" value="Search" class="btn-super-search" data-disable-with="Search">
     </div>
   </form>
+
   <div class="cards">
     <% @supers.each do |superhero| %>
       <% if superhero.photo.attached? %>
