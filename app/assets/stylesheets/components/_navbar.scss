@@ -1,3 +1,9 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .navbar-super-bnb {
   text-align: right;
   justify-content: space-between;
@@ -8,12 +14,12 @@
 }
 
 .dropdown-menu {
-  border: 4px solid black;
   font-size: 16px;
-  background-color: white;
-  margin-top: 68px;
-  right: 81px;
+  background-color: transparent;
+  margin-top: 89px;
+  right: 97px;
   width: 200px;
+  border: 0;
 }
 
 
@@ -48,9 +54,10 @@ a {
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 16px;
+  top: -4px;
   text-align: center;
-  font-size: 90px;
+  font-size: 114px;
+  letter-spacing: 12px;
   color: #D6130A;
-  text-shadow: 4px 4px black;
+  text-shadow: 4px 6px black;
 }

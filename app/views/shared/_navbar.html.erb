@@ -24,9 +24,9 @@
         <div class="nav-item dropdown">
           <%= image_tag "https://avatars2.githubusercontent.com/u/60719853?s=460&u=d6c47e5e47f08a8bd55e0f80c74e9ea86d0c47d8&v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Create New Hero", new_super_path, class: "nav-link" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Profile", user_path(current_user), class: "btn-super-nav" %>
+    <!--         <%= link_to "Create New Hero", new_super_path, class: "nav-link" %> -->
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-super-nav" %>
           </div>
         </div>
       <% else %>
