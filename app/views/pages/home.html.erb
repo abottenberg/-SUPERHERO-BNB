@@ -1,13 +1,16 @@
 <div class="superhero-supervillain d-flex">
   <%= link_to supers_path(superhero: true) do %>
-    <div class="panel hero" style="background-image: linear-gradient(rgba(255,69,0,0.2),rgba(255,69,0,0.4)), url(<%= asset_path("superheroes.jpg") %>);">
-      <p class="text top-left">Superheroes!</p>
+    <div class="panel hero d-flex justify-content-center" style="background-image: linear-gradient(rgba(255,69,0,0.2),rgba(255,69,0,0.4)), url(<%= asset_path("superheroes.jpg") %>);">
+      <p class="text top-left btn-super-nav">Superheroes!</p>
+      <p class="front-text align-self-center">Come and see all the universe's heroes!</p>
     </div>
   <% end %>
 
   <%= link_to supers_path(superhero: false) do %>
-    <div class="panel villain" style="background-image: linear-gradient(rgba(5,15,77,0.4),rgba(5,15,77,0.4)), url(<%= asset_path("supervillain.jpg") %>);">
-      <p class="text bottom-right">Supervillains!</p>
+    <div class="panel villain d-flex justify-content-center" style="background-image: linear-gradient(rgba(5,15,77,0.4),rgba(5,15,77,0.4)), url(<%= asset_path("supervillain.jpg") %>);">
+      <p class="text bottom-right btn-super-nav">Supervillains!</p>
+      <p class="front-text align-self-center">Choose the dark side with the villains!</p>
     </div>
   <% end %>
+  
 </div>
