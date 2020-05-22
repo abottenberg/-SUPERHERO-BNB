@@ -45,6 +45,65 @@
   grid-gap: 16px;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-super-image {
+  padding: 24px;
+  background-color: white;
+  box-shadow: 5px -1px 19px -4px #6B6B6B;
+}
+
+.container-super-card {
+  align-items: left;
+  padding: 24px;
+}
+
+.super-description-box {
+  padding: 16px;
+  background-color: white;
+  box-shadow: 5px -1px 19px -4px #6B6B6B;
+}
+
+.profile-container{
+  display: flex;
+}
+
+.card-category-profile {
+  overflow: hidden;
+  padding: 50px;
+  background-size: cover;
+  height: 40px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+.hero-profile {
+  box-shadow: 5px -1px 19px -4px #6B6B6B;
+}
+
+.profile-image {
+ height: 100%;
+ width: 140px;
+ object-fit: cover;
+}
+
+.hero-individual {
+  min-height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -80,24 +139,3 @@
   }
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.container-super-image {
-  padding: 24px;
-  background-color: white;
-  box-shadow: 5px -1px 19px -4px #6B6B6B;
-}
-
-.container-super-card {
-  align-items: left;
-  padding: 24px;
-}
-
-.super-description-box {
-  padding: 16px;
-  background-color: white;
-  box-shadow: 5px -1px 19px -4px #6B6B6B;
-}
