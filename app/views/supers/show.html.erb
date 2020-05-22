@@ -1,33 +1,49 @@
-<div class="container">
+<div class="container-show">
+  <div class="row"></div>
+
   <div class="container-super-image">
-  <%= cl_image_tag @super.photo.key, width: 400, height: 500, crop: :fill %>
+    <%= cl_image_tag @super.photo.key, width: 400, height: 500, crop: :fill %>
     <div>
       <% if @super.user == current_user %>
-      <%= link_to 'Edit', edit_super_path(@super), class: "btn btn-super-edits" %>
-      <%= link_to 'Delete', super_path(@super), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-super-edits" %>
-    <% end %>
-    </div>
-  </div>
-  <div class="container-super-card">
-    <div class="container-super-infos">
-      <h1> <%= @super.name %></h1>
-      <p><%= @super.location %></p>
-      <% if @super.good == true %>
-        <p>Hero</p>
-      <% else %>
-        <p>Villain</p>
+        <%= link_to 'Edit', edit_super_path(@super), class: "btn btn-super-edits" %>
+        <%= link_to 'Delete', super_path(@super), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-super-edits" %>
       <% end %>
-      <p class="super-description-box"><%= @super.description %></p>
-      <button type="button" class="btn-super-nav" data-toggle="modal" data-target="#exampleModal">
-        Add to team
-      </button>
-      <%= link_to 'Back', supers_path, class: "btn-super-nav"%>
     </div>
   </div>
+
+  <div class="container-super-card">
+
+    <div class="container-super-infos">
+
+      <div class="show-super-name">
+        <h1> <%= @super.name %></h1>
+      </div>
+
+      <div class="show-super-location">
+        <h3><%= @super.location %></h3>
+      </div>
+      <div class="show-super-good">
+        <% if @super.good == true %>
+        <h3>Hero</h3>
+      <% else %>
+        <h3>Villain</h3>
+      <% end %>
+      </div>
+
+    </div>
+
+    <div class="super-info-box">
+      <p class="super-description-box"><%= @super.description %></p>
+    </div>
+
+    <button type="button" class="btn-super-nav" data-toggle="modal" data-target="#exampleModal">
+      Add to team
+    </button>
+    <%= link_to 'Back', supers_path, class: "btn-super-nav"%>
+
+  </div>
+
 </div>
-
-<!-- Button trigger modal -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

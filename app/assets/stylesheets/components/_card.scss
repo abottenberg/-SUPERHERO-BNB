@@ -81,9 +81,10 @@
   }
 }
 
-.container {
+.container-show {
+  padding-top: 16px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .container-super-image {
@@ -93,11 +94,37 @@
 }
 
 .container-super-card {
-  align-items: left;
+  width: 50%;
   padding: 24px;
 }
 
+.container-super-info {
+  h1 {
+    font-size: 46px;
+  }
+}
+
+.h3 {
+    font-family: $comic-font;
+    font-size: 36px;
+  }
+
+.show-super-name {
+  margin-bottom: 24px;
+}
+
+.show-super-location {
+  margin-bottom: 24px;
+}
+
+.show-super-good {
+  margin-bottom: 24px;
+}
+
 .super-description-box {
+  width: 80%;
+  min-height: 80px;
+  margin: 32px 0 32px;
   padding: 16px;
   background-color: white;
   box-shadow: 5px -1px 19px -4px #6B6B6B;
