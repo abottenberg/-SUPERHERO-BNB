@@ -1,10 +1,12 @@
 .form_container {
   text-align: center;
-  border: 8px solid black;
+  border: 4px solid black;
   margin-top: 40px;
   padding: 40px;
   font-family: $comic-font;
   font-size: 16px;
+  background-color: white;
+  box-shadow: 8px 8px #888888;
   h2 {
     font-family: $super-font;
   }
@@ -24,7 +26,7 @@
 
 .form-group {
   .text {
-  border: 1px solid #ced4da;
+  border: 0;
   }
 }
 
@@ -33,4 +35,22 @@
   width: 300px;
   border: 2px solid black;
   transform: skew(-10deg);
+}
+
+.modal-content {
+  text-align: center;
+  border: 8px solid black;
+  margin-top: 40px;
+  padding: 40px;
+  font-family: $comic-font;
+  font-size: 16px;
+  .close {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-family: $super-font;
+  }
+  .btn-super-confirm {
+    margin-top: 40px;
+  }
 }
