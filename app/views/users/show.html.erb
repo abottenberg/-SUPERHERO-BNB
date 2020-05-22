@@ -1,32 +1,29 @@
-<h1> View Your Team!</h1>
-<div class="d-flex mt-4 mr-5 ml-5">
-
-  <div class="hero-profile">
-    <div>
+<div class="user-profile-info">
+  <h1 class="main-header"> Here are your Lineups!</h1>
+  <div class="user-rosters d-flex">
+    <div class="hero-profile heroes">
+      <h2 class="lineup-subheader">Your Justice League</h2>
       <% @user.bookings.each do |booking| %>
         <% if booking.super.good == true %>
-          <div class="d-flex hero-individual mb-4">
-           <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %>
-            </div>
+          <div class="d-flex hero-individual">
+            <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
             <div>
               <h2><%= booking.super.name %></h2>
-              <p><%= booking.super.description %></p>
+              <p class="hero-description"><%= booking.super.description %></p>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
-  </div>
-
-
-
-    <div class="hero-profile">
-    <div>
+    <div class="user-center">
+      <h1>VS</h1>
+    </div>
+    <div class="hero-profile villains">
+      <h2 class="lineup-subheader">Your Evil Justice League</h2>
       <% @user.bookings.each do |booking| %>
         <% if booking.super.good == false %>
-          <div class="d-flex hero-individual mb-4">
-           <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %>
-            </div>
+          <div class="d-flex hero-individual">
+           <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
             <div>
               <h2><%= booking.super.name %></h2>
               <p><%= booking.super.description %></p>
@@ -36,32 +33,4 @@
       <% end %>
     </div>
   </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
