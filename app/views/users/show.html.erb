@@ -7,9 +7,12 @@
         <% if booking.super.good == true %>
           <div class="d-flex hero-individual">
             <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
-            <div>
-              <h2><%= booking.super.name %></h2>
-              <p class="hero-description"><%= booking.super.description %></p>
+            <div class="conten-box">
+              <h2><%= link_to "#{booking.super.name}", super_path(booking.super_id)%></h2>
+              <p class="hero-description"><%= booking.super.description %>
+                <br>
+                <%= link_to 'Delete', super_booking_path(booking.super, booking), class: "btn btn-warning", method: :delete, data: {confirm: "Are you sure?"} %>
+              </p>
             </div>
           </div>
         <% end %>
@@ -19,14 +22,17 @@
       <h1>VS</h1>
     </div>
     <div class="hero-profile villains">
-      <h2 class="lineup-subheader">Your Evil Justice League</h2>
+      <h2 class="lineup-subheader-evil">Your Evil Justice League</h2>
       <% @user.bookings.each do |booking| %>
         <% if booking.super.good == false %>
           <div class="d-flex hero-individual">
            <div><%= cl_image_tag booking.super.photo.key, class: "profile-image" %></div>
-            <div>
-              <h2><%= booking.super.name %></h2>
-              <p><%= booking.super.description %></p>
+            <div class="conten-box">
+              <h2><%= link_to "#{booking.super.name}", super_path(booking.super_id)%></h2>
+              <p class="hero-description"><%= booking.super.description %>
+                <br>
+                <%= link_to 'Delete', super_booking_path(booking.super, booking), class: "btn btn-warning", method: :delete, data: {confirm: "Are you sure?"} %>
+              </p>
             </div>
           </div>
         <% end %>
@@ -34,3 +40,5 @@
     </div>
   </div>
 </div>
+
+
