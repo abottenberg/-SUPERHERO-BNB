@@ -2,7 +2,11 @@
   <div class="row"></div>
 
   <div class="container-super-image">
-    <%= cl_image_tag @super.photo.key, width: 400, height: 500, crop: :fill %>
+    <% if @super.photo.attached? %>
+      <%= cl_image_tag @super.photo.key, width: 400, height: 500, crop: :fill %>
+    <% else %>
+      <%= image_tag 'superheroes.jpg', width: 400, height: 500 %>
+    <% end %>
     <div>
       <% if @super.user == current_user %>
         <%= link_to 'Edit', edit_super_path(@super), class: "btn btn-super-edits" %>
